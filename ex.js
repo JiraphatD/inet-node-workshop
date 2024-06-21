@@ -1,3 +1,3 @@
-let result = "Auu";
+let result = "Auuyyy";
 result.toLowerCase();
 console.log(result);
