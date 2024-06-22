@@ -1,3 +1,5 @@
+require("dotenv").config();
+const { DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS } = process.env;
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -15,7 +17,8 @@ var app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 mongoose
-  .connect(`mongodb+srv://jiraphat:${password}@cluster0.6vhs3zh.mongodb.net/`)
+  .connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`)
+  // .connect(`mongodb+srv://jiraphat:${password}@cluster0.6vhs3zh.mongodb.net/`)
   .then(console.log("success connect"))
   .catch((err) => console.log(err));
 app.use(cors());

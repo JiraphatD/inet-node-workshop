@@ -72,7 +72,7 @@ router.put("/:product_id", async (req, res) => {
         }
       )
       .then(console.log("success"));
-    let product = await productModel.findOne({ id });
+    let product = await productModel.findOne({ product_id: id });
     return res.send({
       data: product,
       message: "change success",
@@ -86,7 +86,7 @@ router.put("/:product_id", async (req, res) => {
 
 router.delete("/:product_id", async (req, res) => {
   try {
-    let id = req.params.id;
+    let id = req.params.product_id;
     console.log("id: ", id);
     await productModel.deleteOne({ product_id: id }); // Use 'id' instead of '_id'
     let product = await productModel.find();

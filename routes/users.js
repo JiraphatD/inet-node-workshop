@@ -28,11 +28,6 @@ router.post("/", async (req, res) => {
   try {
     let body = req.body;
     let new_user = new userModel({
-      user_id: body.user_id
-        ? body.user_id
-        : () => {
-            throw new Error("field invalid");
-          },
       username: body.username,
       password: body.password,
       first_name: body.first_name,
