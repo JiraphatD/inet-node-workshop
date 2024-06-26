@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const productModel = require("./models/product");
 const userModel = require("./models/user");
 const orderModel = require("./models/order");
+const cartModel = require("./models/cart");
 
 let faker = require("@faker-js/faker");
 faker = faker.fakerEN_US;
@@ -15,6 +16,7 @@ mongoose
 async function seedDB() {
   try {
     // Clear existing data (optional)
+    await cartModel.deleteMany({});
     await orderModel.deleteMany({});
     await productModel.deleteMany({});
     await userModel.deleteMany({});

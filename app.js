@@ -10,6 +10,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var productRouter = require("./routes/product");
 var orderRouter = require("./routes/order");
+var cartRouter = require("./routes/cart"); //fix this
 require("dotenv").config();
 const password = process.env.PASSWORD;
 
@@ -37,6 +38,7 @@ app.use("/", indexRouter);
 app.use("/user", usersRouter);
 app.use("/product", productRouter);
 app.use("/order", orderRouter);
+app.use("/cart", cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

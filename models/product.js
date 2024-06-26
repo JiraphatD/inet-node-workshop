@@ -7,6 +7,7 @@ const products = new mongoose.Schema({
   detail: { type: String },
   price: { type: Number },
   amount: { type: Number },
+  // image: { type: String },
 });
 
 products.plugin(autoIncrement, { inc_field: "product_id" });

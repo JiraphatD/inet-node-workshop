@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
   try {
     let body = req.body;
     let new_order = new orderModel({
-      order_id: body.order_id,
+      // order_id: body.order_id,
       buyer: body.buyer,
       order_list: body.order_list,
       total_price: body.total_price,
